@@ -4,27 +4,29 @@ author: "shourov"
 date: "2024-02-04"
 output: html_document
 ---
+#Links(RPubs/GitHub)
+https://rpubs.com/shourov08/1145212
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+#Overview
+This table provide the information of different candidate from different states,those are doing election on behalf of Donald Trump.
+
+#Loading Data into a Data Frame
+
+```{r}
+orders <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/polls/pres_pollaverages_1968-2016.csv")
+head(orders, 50)
 ```
 
-## R Markdown
+#Create a subset of columns
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+orders_subset <- orders[, c("cycle", "state", "modeldate", "candidate_name", "candidate_id")]
+head(orders_subset, 50)
 ```
 
-## Including Plots
+#Rename columns
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+colnames(orders_subset) <- c("cycle1", "state1", "ProductID1", "Quantity1", "Price1")
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
