@@ -1,0 +1,31 @@
+---
+title: "SQL_R_607"
+author: "shourov"
+date: "2024-02-04"
+output: html_document
+---
+
+#Links(Git/RPubs):
+https://raw.githubusercontent.com/shourov08/R-Types607/main/Movie_Rating.csv
+https://rpubs.com/shourov08/1145330
+
+#Load the CSV file in R dataframe
+
+```{r}
+order <- read.csv("https://raw.githubusercontent.com/shourov08/R-Types607/main/Movie_Rating.csv")
+show(order)
+```
+
+#Graphical presentation of movie:
+
+```{r}
+#ggplot(data = order, mapping = aes(x = Movie, y = Rating)) +
+  #geom_point(size = 5)
+```
+
+
+#Missing data handeling 
+
+```{r}
+print(order , na.rm = FALSE)
+```
